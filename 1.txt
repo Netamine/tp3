@@ -1,0 +1,59 @@
+Je suis sur une machine Windows, j'ai ubunto installé dessus sur Oracle VM Virtualbox en mode bridge sur l'adresse ip 192.168.2.77
+la version de Ubuntu est 22.04 avec Python 3.10.12
+
+
+
+ce ci est un projet de Machine Learning intégrant Streamlit pour le frontend, FastAPI pour le backend, MLflow pour la gestion des modèles, et Docker-compose pour le déploiement.
+
+Remarques
+dataset utilisée Iris.
+
+Livrables attendus
+1 :Documentation, les commandes indiquant comment utiliser votre projet, y compris les commandes nécessaires pour le déploiement avec Docker-compose.
+2 :README.md : Un fichier README.md contenant :
+Une brève description du projet
+Les étapes d'installation et d'utilisation
+Les instructions pour exécuter les services Streamlit, FastAPI et MLflow
+Tout autre détail pertinent
+
+voici mon dossier de travail  :
+netamine@Ubunto2:~/session4/tp3
+
+netamine@Ubunto2:~/session4/tp3$ tree
+.
+├── backend
+│   ├── Dockerfile
+│   └── main.py
+├── docker-compose.yaml
+├── frontend
+│   ├── Dockerfile
+│   └── main.py
+├── mlflow
+│   ├── Dockerfile
+│   ├── metrics.py
+│   └── mlruns
+│       └── mlflow-experiments
+└── models
+    ├── model_2024_06_15_T03_14_31.pkl
+    ├── model_2024_06_15_T03_23_08.pkl
+    └── model.pkl
+
+6 directories, 10 files
+
+
+
+Voici le contenu des fichiers 
+
+~/session4/tp3/docker-compose.yaml:
+
+~/session4/tp3/frontend/Dockerfile:
+
+~/session4/tp3/frontend/main.py:
+
+~/session4/tp3/backend/Dockerfile:
+
+~/session4/tp3/backend/src/main.py:
+
+~/session4/tp3/mlflow/Dockerfile:
+
+~/session4/tp3/mlflow/metrics.py:
