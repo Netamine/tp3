@@ -4,7 +4,7 @@
 La classification de l'espèce d'une fleur d'Iris est un problème de prédiction classique en machine learning, souvent utilisé pour démontrer les concepts de classification et de modélisation. Ce projet vise à automatiser et à améliorer ce processus de décision à l'aide de techniques modernes de machine learning et de déploiement d'applications.
 
 ### Objectif
-Construire un pipeline de machine learning (ML) pour prédire l'espèce d'Iris en fonction de ses caractéristiques, afin de rendre les processus d'identification plus efficaces et ciblés.
+Le but de ce projet est de développer un système efficace pour prédire l'espèce d'Iris, facilitant ainsi la prise de décision basée sur les caractéristiques mesurées des fleurs en utilisant les outils Streamlit, FastAPI et MLflow
 
 ### Aperçu Technique
 Ce projet intègre les outils et technologies suivants :
@@ -13,14 +13,36 @@ Ce projet intègre les outils et technologies suivants :
 - **MLflow** pour la gestion des modèles : Suivre et gérer les expériences de modélisation.
 - **Docker et Docker-Compose** pour la containerisation : Faciliter le déploiement et la gestion des services.
 
-### Composants du Pipeline
+## Éléments du Pipeline de Machine Learning
 
-1. **Acquisition et Prétraitement des Données** : Chargement et préparation des données du dataset Iris.
-2. **Entraînement de modèles ML avec suivi MLflow** : Utilisation de MLflow pour suivre les expériences et les modèles entraînés.
-3. **Déploiement du meilleur modèle via FastAPI** : Création d'une API RESTful pour servir le modèle prédictif.
-4. **Interface utilisateur Streamlit** : Interface web pour interagir avec le modèle via le point de terminaison FastAPI.
-5. **Containerisation avec Docker et Docker-Compose** : Déploiement de l'ensemble du projet dans des conteneurs Docker orchestrés par Docker-Compose.
+1. **Collecte et Prétraitement des Données** :
+   - Chargement et préparation des données du dataset Iris.
 
+2. **Entraînement des Modèles Machine Learning avec Suivi MLflow** :
+   - Utilisation de MLflow pour organiser et suivre les différentes expériences de modélisation. Cela inclut l'entraînement de divers modèles et la comparaison de leurs performances pour sélectionner le modèle optimal.
+
+3. **Service du Modèle via FastAPI** :
+   - Mise en place d'une API RESTful avec FastAPI pour exposer le modèle prédictif. Cette API permet aux applications externes de soumettre des données et de recevoir des prédictions en retour.
+
+4. **Interface Utilisateur avec Streamlit** :
+   - Création d'une interface utilisateur interactive en utilisant Streamlit, permettant aux utilisateurs finaux de soumettre des données et de voir les prédictions générées par le modèle via l'API FastAPI.
+
+5. **Containerisation avec Docker et Docker-Compose** :
+   - Utilisation de Docker pour containeriser les applications backend, frontend, et MLflow. Docker-Compose est utilisé pour orchestrer ces conteneurs, simplifiant ainsi le déploiement et la gestion du projet dans divers environnements.
+
+6. **Déploiement et Gestion des Modèles avec MLflow** :
+   - Une fois les conteneurs lancés, pour gérer les modèles, vous pouvez exécuter le conteneur MLflow et accéder à un shell bash pour enregistrer et gérer les modèles. Voici les étapes :
+     - Après avoir lancé les services avec Docker-Compose, exécutez la commande suivante pour accéder au conteneur MLflow :
+       ```bash
+       docker exec -it mlflow bash
+       ```
+     - À partir du shell du conteneur, vous pouvez exécuter des scripts ou des commandes pour entraîner votre modèle, évaluer ses performances, et enregistrer le modèle dans le répertoire `models` avec un suffixe de date pour indiquer le moment de l'entraînement :
+       ```bash
+       # Exemple de commande pour entraîner un modèle et sauvegarder le fichier
+       python3 /app/metrics.py
+       ```
+     - Ce script entraînera un modèle, évaluera ses performances, et enregistrera le modèle dans le dossier `models` avec un nom incluant un timestamp, facilitant le suivi des différentes versions du modèle.
+    
 ### Structure du Dossier de Projet
 
 ```
