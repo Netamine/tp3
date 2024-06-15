@@ -100,6 +100,6 @@ TP3/
 3. Vérifiez que le modèle a été enregistré dans le répertoire `/models` avec un suffixe de date pour identifier les fichiers de modèle sauvegardés.
    - accedez au MLflow : http://localhost:8003 et vérifier que votre experience est enregistrée avec les metrics
 
-Ce guide fournit une vue d'ensemble complète de votre projet, des étapes de mise en place aux opérations courantes, pour assurer une gestion efficace du pipeline de Machine Learning.
+Ce guide fournit une vue d'ensemble complète du projet, des étapes de mise en place aux opérations courantes, pour assurer une gestion efficace du pipeline de Machine Learning.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
